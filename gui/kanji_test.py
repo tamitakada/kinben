@@ -1,3 +1,4 @@
+from re import L
 import tkinter as tk
 from gui.widgets.border_box import BorderBox
 from gui.widgets.image_box import ImageBox
@@ -6,6 +7,7 @@ from gui.widgets.kanji_view import KanjiView
 from PIL import Image, ImageTk
 from gui.widgets.button_bar import ButtonBar
 import gui.constants as c
+from gui.widgets.results_view import ResultsView
 
 
 class KanjiTestPage(tk.Frame):
@@ -13,6 +15,7 @@ class KanjiTestPage(tk.Frame):
     question_count = 0
     correct_count = 0
     current_word = ""
+    incorrect_words = []
     
     def __init__(self, root, db, nav):
         super().__init__(root, bg=c.BG, width=800, height=600)
@@ -35,13 +38,14 @@ class KanjiTestPage(tk.Frame):
             self,
             [
                 {"image": "gui/images/exit-icon.png", "command": self.go_to_menu},
+                {"image": "gui/images/score-icon.png", "command": self.quit_to_results},
                 {"image": "gui/images/skip-icon.png", "command": self.skip_question},
                 {"image": "gui/images/check-icon.png", "command": self.check_answer}
             ],
             10,
             c.BG
         )
-        self.button_bar.place(relx=0.9, rely=0.1, anchor='n')
+        self.button_bar.place(relx=0.85, rely=0.1, anchor='n')
 
         self.question_count += 1 
         self.get_new_question()
@@ -51,6 +55,14 @@ class KanjiTestPage(tk.Frame):
 
     def skip_question(self):
         self.get_new_question()
+
+    def quit_to_results(self):
+        data = {
+            "question_count": self.question_count,
+            "correct_count": self.correct_count,
+            "incorrect_words": self.incorrect_words
+        }
+        self.nav.go_to_route_with_data("/results", data)
 
     def check_answer(self):
         self.ans_img = ImageTk.PhotoImage(
@@ -76,6 +88,7 @@ class KanjiTestPage(tk.Frame):
         self.button_bar.set_buttons(
             [
                 {"image": "gui/images/exit-icon.png", "command": self.go_to_menu},
+                {"image": "gui/images/score-icon.png", "command": self.quit_to_results},
                 {"image": "gui/images/skip-icon.png", "command": self.skip_question},
                 {"image": "gui/images/check-icon.png", "command": self.check_answer}
             ]
@@ -91,6 +104,7 @@ class KanjiTestPage(tk.Frame):
     def incorrect_answer(self):
         self.reset_ui()
 
+        self.incorrect_words.append(self.current_word)
         self.question_count += 1
         self.get_new_question()
 

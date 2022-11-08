@@ -1,6 +1,7 @@
 import tkinter as tk
 import gui.constants as c
 from gui.kanji_test import KanjiTestPage
+from gui.results import ResultsPage
 from gui.navigator import Navigator
 from gui.menu import MenuPage
 from database.database import Database
@@ -10,6 +11,14 @@ window.geometry("800x600")
 window["background"] = c.BG
 
 db = Database()
-nav = Navigator(window, db, {"/": KanjiTestPage, "/menu": MenuPage})
+nav = Navigator(
+    window,
+    db,
+    {
+        "/": KanjiTestPage,
+        "/menu": MenuPage,
+        "/results": ResultsPage
+    }
+)
 
 window.mainloop()

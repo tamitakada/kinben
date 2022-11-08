@@ -23,3 +23,12 @@ class Navigator:
             self.current_page.destroy()
         
         self.current_page = new_page
+        
+    def go_to_route_with_data(self, route, data):
+        new_page = self.pages[route](self.root, self.db, self, data)
+        new_page.pack()
+
+        if hasattr(self, "current_page"):
+            self.current_page.destroy()
+        
+        self.current_page = new_page
