@@ -19,6 +19,12 @@ class KanjiTestPage(tk.Frame):
     
     def __init__(self, root, db, nav):
         super().__init__(root, bg=c.BG, width=800, height=600)
+        
+        self.question_count = 0
+        self.correct_count = 0
+        self.current_word = ""
+        self.incorrect_words = []
+        
         self.db = db
         self.nav = nav
         self.setup()
@@ -51,7 +57,7 @@ class KanjiTestPage(tk.Frame):
         self.get_new_question()
 
     def go_to_menu(self):
-        self.nav.go_to_route("/menu")
+        self.nav.go_to_route("/")
 
     def skip_question(self):
         self.get_new_question()

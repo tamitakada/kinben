@@ -20,6 +20,7 @@ class ResultsPage(tk.Frame):
         self.question_count = data["question_count"]
         self.correct_count = data["correct_count"]
         self.incorrect_words = data["incorrect_words"]
+        self.current_incorrect_index = 0
         
         self.setup()
 
@@ -138,6 +139,15 @@ class ResultsPage(tk.Frame):
                     self.display_next_incorrect_word
                 )
                 incorrect_data_next.grid(row=0, column=2)
+            else:
+                self.incorrect_data_lbl = tk.Label(
+                    incorrect_data_frame,
+                    text=self.incorrect_words[0]["kanji"],
+                    fg="white",
+                    bg=c.BG,
+                    font=("Zen Maru Gothic", 20)
+                )
+                self.incorrect_data_lbl.grid(row=0, column=0)
         
     def get_correct_percent(self):
         if self.question_count - 1 == 0: return 0
@@ -162,4 +172,4 @@ class ResultsPage(tk.Frame):
         )
 
     def go_to_menu(self):
-        self.nav.go_to_route("/menu")
+        self.nav.go_to_route("/")

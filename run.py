@@ -16,8 +16,8 @@ nav = Navigator(
     window,
     db,
     {
-        "/": KanjiTestPage,
-        "/menu": MenuPage,
+        "/": MenuPage,
+        "/kanji": KanjiTestPage,
         "/results": ResultsPage
     }
 )
