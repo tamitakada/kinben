@@ -31,7 +31,6 @@ class MenuPage(tk.Frame):
         
         button_infos = [
             ("練習を始める", self.go_to_kanji_test),
-            ("使い方", self.go_to_help),
             ("データ変更", self.go_to_edit)
         ]
         for info in button_infos:
@@ -47,9 +46,6 @@ class MenuPage(tk.Frame):
         
     def go_to_kanji_test(self):
          self.nav.go_to_route("/kanji")
-        
-    def go_to_help(self):
-        print("help")
         
     def go_to_edit(self):
         self.nav.go_to_route("/search")
