@@ -1,13 +1,8 @@
-from re import L
 import tkinter as tk
-from gui.widgets.border_box import BorderBox
-from gui.widgets.image_box import ImageBox
-import gui.widgets.button
 from gui.widgets.kanji_view import KanjiView
 from PIL import Image, ImageTk
 from gui.widgets.button_bar import ButtonBar
 import gui.constants as c
-from gui.widgets.results_view import ResultsView
 
 
 class KanjiTestPage(tk.Frame):

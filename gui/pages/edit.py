@@ -3,7 +3,6 @@ from gui.widgets.button import TextButton
 from PIL import Image, ImageTk
 from gui.widgets.button_bar import ButtonBar
 import gui.constants as c
-from gui.widgets.placeholder_entry import PlaceholderEntry
 
 
 class EditPage(tk.Frame):
