@@ -12,7 +12,7 @@ class ResultsPage(tk.Frame):
     incorrect_words = []
     current_incorrect_index = 0
     
-    def __init__(self, root, db, nav, data):
+    def __init__(self, root, db, nav, data={}):
         super().__init__(root, bg=c.BG, width=800, height=600)
         self.db = db
         self.nav = nav

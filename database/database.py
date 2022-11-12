@@ -127,10 +127,12 @@ class Database:
         Converts word tuple returned from sql find to a dictionary format.
     """
     def word_tuple_to_dict(self, word):
-        word_dict = {"id": word[0], "yomi": word[1], "kanji": word[2]}
-        if len(word[3]) > 0: word_dict["example"] = word[3]
-        elif len(word[4]) > 0: word_dict["example"] = word[4]
-        return word_dict
+        if word:
+            word_dict = {"id": word[0], "yomi": word[1], "kanji": word[2]}
+            if len(word[3]) > 0: word_dict["example"] = word[3]
+            elif word[4] and len(word[4]) > 0: word_dict["example"] = word[4]
+            return word_dict
+        else: return None
 
     def get_random_word(self):
         db = self.get_db()

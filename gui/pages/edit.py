@@ -7,18 +7,18 @@ import gui.constants as c
 
 class EditPage(tk.Frame):
     
-    def __init__(self, root, db, nav, data):
+    def __init__(self, root, db, nav, data={}):
         super().__init__(root, bg=c.BG, width=800, height=600)
         self.db = db
         self.nav = nav
         
-        self.word = data["word"]
+        if "word" in data.keys(): self.word = data["word"]
         
         self.setup()
 
     def setup(self):
         self.img = ImageTk.PhotoImage(
-            Image.open("gui/images/haikei-waves-2.png")
+            Image.open("gui/images/haikei-waves-4.png")
                 .resize((800, 600), Image.Resampling.LANCZOS)
         )
         self.bg_img = tk.Label(self, image=self.img, borderwidth=0)
@@ -54,7 +54,6 @@ class EditPage(tk.Frame):
             insertborderwidth=0,
             selectborderwidth=0
         )
-        self.kanji_entry.insert(0, self.word["kanji"])
         self.kanji_entry.pack(pady=5)
 
         yomi_lbl = tk.Label(
@@ -76,7 +75,6 @@ class EditPage(tk.Frame):
             insertborderwidth=0,
             selectborderwidth=0
         )
-        self.yomi_entry.insert(0, self.word["yomi"])
         self.yomi_entry.pack(pady=5)
 
         example_lbl = tk.Label(
@@ -100,8 +98,11 @@ class EditPage(tk.Frame):
         )
         self.example_entry.pack(pady=5)
 
-        if "example" in self.word.keys(): 
-            self.example_entry.insert(0, self.word["example"])
+        if hasattr(self, "word"):
+            self.kanji_entry.insert(0, self.word["kanji"])
+            self.yomi_entry.insert(0, self.word["yomi"])
+            if "example" in self.word.keys(): 
+                self.example_entry.insert(0, self.word["example"])
 
         save_button = TextButton(
             self,
@@ -121,12 +122,21 @@ class EditPage(tk.Frame):
         self.save_label.place(relx=0.5, rely=0.87, anchor='center')
 
     def save_edits(self):
-        result = self.db.edit_word(
-            self.word["id"], 
-            yomi=self.yomi_entry.get(), 
-            kanji=self.kanji_entry.get(), 
-            example=self.example_entry.get()
-        )
+        result = 0
+        if hasattr(self, "word"):
+            result = self.db.edit_word(
+                self.word["id"], 
+                yomi=self.yomi_entry.get(), 
+                kanji=self.kanji_entry.get(), 
+                example=self.example_entry.get()
+            )
+        else:
+            result = self.db.attempt_add_word(
+                yomi=self.yomi_entry.get(), 
+                kanji=self.kanji_entry.get(), 
+                example=self.example_entry.get()
+            )
+        
         if result == 1:
             self.save_label.configure(
                 text="保存完了",

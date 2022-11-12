@@ -110,7 +110,10 @@ class SearchPage(tk.Frame):
         
         self.button_bar = ButtonBar(
             self,
-            [{"image": "gui/images/exit-icon.png", "command": self.go_to_menu}],
+            [
+                {"image": "gui/images/plus-icon.png", "command": self.go_to_edit_new},
+                {"image": "gui/images/exit-icon.png", "command": self.go_to_menu}
+            ],
             10,
             c.BG
         )
@@ -118,6 +121,9 @@ class SearchPage(tk.Frame):
         
     def go_to_menu(self):
         self.nav.go_to_route("/")
+
+    def go_to_edit_new(self):
+        self.nav.go_to_route("/edit")
         
     def search_for_word(self):
         query = self.search_entry.get()
