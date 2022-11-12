@@ -7,6 +7,7 @@ from gui.navigator import Navigator
 from gui.pages.menu import MenuPage
 from gui.pages.search import SearchPage
 from database.database import Database
+from gui.pages.edit import EditPage
 
 window = tk.Tk()
 window.geometry("800x600")
@@ -20,7 +21,8 @@ nav = Navigator(
         "/": MenuPage,
         "/kanji": KanjiTestPage,
         "/results": ResultsPage,
-        "/search": SearchPage
+        "/search": SearchPage,
+        "/edit": EditPage
     }
 )
 

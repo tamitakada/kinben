@@ -162,5 +162,8 @@ class SearchPage(tk.Frame):
             ]
         )
     
-    def go_to_edit(self):
-        print("go to edit")
+    def go_to_edit(self, word):
+        self.nav.go_to_route_with_data(
+            "/edit",
+            {"word": word}
+        )

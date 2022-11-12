@@ -53,7 +53,7 @@ class SearchResultsView(tk.Frame):
                 frame,
                 self.detail_img,
                 self.bg_color,
-                self.search_command
+                lambda r=result: self.search_command(r)
             )
             detail_button.place(relx=0.95, rely=0.5, anchor="center")
             
