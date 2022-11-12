@@ -85,6 +85,21 @@ class Database:
         db.close()
         
         return 1
+        
+    def search_for_word(self, query: str):
+        db = self.get_db()
+        c = db.cursor()
+
+        command = f"SELECT * FROM kanji WHERE yomi LIKE '%{query}%' OR kanji LIKE '%{query}%' ORDER BY yomi"
+        words = c.execute(command).fetchall()
+
+        db.close()
+        
+        all_word_tuples = []
+        for word in words:
+            all_word_tuples.append(self.word_tuple_to_dict(word))
+
+        return all_word_tuples
 
     def find_word(self, yomi: str, kanji: str):
         db = self.get_db()

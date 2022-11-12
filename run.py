@@ -5,6 +5,7 @@ from gui.pages.kanji_test import KanjiTestPage
 from gui.pages.results import ResultsPage
 from gui.navigator import Navigator
 from gui.pages.menu import MenuPage
+from gui.pages.search import SearchPage
 from database.database import Database
 
 window = tk.Tk()
@@ -18,7 +19,8 @@ nav = Navigator(
     {
         "/": MenuPage,
         "/kanji": KanjiTestPage,
-        "/results": ResultsPage
+        "/results": ResultsPage,
+        "/search": SearchPage
     }
 )
 

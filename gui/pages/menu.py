@@ -52,4 +52,4 @@ class MenuPage(tk.Frame):
         print("help")
         
     def go_to_edit(self):
-        print("edit")
+        self.nav.go_to_route("/search")
