@@ -25,6 +25,6 @@ Kinben is a simple kanji practice app made with Python/Tkinter. Since there is n
 4. 単語・読み・例文の項目を自由に変更し、「保存」ボタンを押す。新しい単語追加のときに保存失敗が生じれば、すでにその単語がデータベースの中に存在している可能性がある。
 5. 左上の白いボタンを押し、漢字検索場面に戻る。
 
-## リンク
+## 使用したソフトウェア等
 * アプリで使用されている背景は、すべて[Haikei](https://haikei.app/)を使って作成されています。
 * アプリでは、大平義道様の[ZEN丸ゴシック体](https://fonts.google.com/specimen/Zen+Maru+Gothic?query=zen+)と井上デザインの[id-壊雲体](http://idfont.jp/infos_mb.html)を使わせていただきました。
