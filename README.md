@@ -22,5 +22,5 @@
 5. 左上の白いボタンを押し、漢字検索場面に戻る。
 
 ## リンク
-* アプリで使用されている背景は、すべて(Haikei)[https://haikei.app/]を使って作成されています。
-* アプリでは、大平義道様の(ZEN丸ゴシック体)[https://fonts.google.com/specimen/Zen+Maru+Gothic?query=zen+]と井上デザインの(id-壊雲体)[http://idfont.jp/infos_mb.html]を使わせていただきました。
+* アプリで使用されている背景は、すべて[Haikei](https://haikei.app/)を使って作成されています。
+* アプリでは、大平義道様の[ZEN丸ゴシック体](https://fonts.google.com/specimen/Zen+Maru+Gothic?query=zen+)と井上デザインの[id-壊雲体](http://idfont.jp/infos_mb.html)を使わせていただきました。
