@@ -1,10 +1,14 @@
-# きんべん　漢字練習アプリ
+# きんべん（KINBEN）　漢字練習アプリ
 
 きんべんは、Python・Tkinterで作られた簡単な漢字練習アプリです。漢字の問題が出題されますが、アプリにはノートパッドが付いていないので、別に紙と鉛筆を揃えて勉強するという形になります。漢字の問題は付属のデータベースから出題されますが、アプリの中で自分から問題を加えたり、すでにデータベースの中にある問題を変えることも可能です。
 
-## インストールの仕方
+Kinben is a simple kanji practice app made with Python/Tkinter. Since there is no built-in notepad, the app is meant to be used as a random question generator that you can use with pencil and paper to wrte down your answers. You can change add to/change the data in the attached kanji database from the app as well.
+
+## インストールの仕方 (How to Install)
 1. コンピューターの端末を開き、`git clone git@github.com:tamitakada/kinben.git`を入力
+   Open your computer terminal and enter the command `git clone git@github.com:tamitakada/kinben.git`.
 2. `cd kinben; python3 run.py`を入力し、アプリを開く
+   Enter `cd kinben; python3 run.py` to run the app.
 
 ## 漢字練習機能の使い方
 1. 端末を開き、`cd kinben; python3 run.py`を入力してアプリを開く。
