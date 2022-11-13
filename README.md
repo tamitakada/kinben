@@ -5,9 +5,9 @@
 Kinben is a simple kanji practice app made with Python/Tkinter. Since there is no built-in notepad, the app is meant to be used as a random question generator that you can use with pencil and paper to wrte down your answers. You can change add to/change the data in the attached kanji database from the app as well.
 
 ## インストールの仕方 (How to Install)
-1. コンピューターの端末を開き、`git clone git@github.com:tamitakada/kinben.git`を入力
+1. コンピューターの端末を開き、`git clone git@github.com:tamitakada/kinben.git`を入力  
    Open your computer terminal and enter the command `git clone git@github.com:tamitakada/kinben.git`.
-2. `cd kinben; python3 run.py`を入力し、アプリを開く
+2. `cd kinben; python3 run.py`を入力し、アプリを開く  
    Enter `cd kinben; python3 run.py` to run the app.
 
 ## 漢字練習機能の使い方
