@@ -7,8 +7,10 @@ Kinben is a simple kanji practice app made with Python/Tkinter. Since there is n
 ## インストールの仕方 (How to Install)
 1. コンピューターの端末を開き、`git clone git@github.com:tamitakada/kinben.git`を入力  
    Open your computer terminal and enter the command `git clone git@github.com:tamitakada/kinben.git`.
-2. `cd kinben; python3 run.py`を入力し、アプリを開く  
-   Enter `cd kinben; python3 run.py` to run the app.
+2. `cd kinben; pip3 install requirements.txt`を入力  
+   Enter the command `cd kinben; pip3 install requirements.txt`.
+2. `python3 run.py`を入力し、アプリを開く  
+   Enter `python3 run.py` to run the app.
 
 ## 漢字練習機能の使い方
 1. 端末を開き、`cd kinben; python3 run.py`を入力してアプリを開く。
