@@ -1,8 +1,8 @@
 # きんべん（KINBEN）　漢字練習アプリ
 
-きんべんは、Python・Tkinterで作られた簡単な漢字練習アプリです。漢字の問題が出題されますが、アプリにはノートパッドが付いていないので、別に紙と鉛筆を揃えて勉強するという形になります。漢字の問題は付属のデータベースから出題されますが、アプリの中で自分から問題を加えたり、すでにデータベースの中にある問題を変えることも可能です。
+きんべんはPython・Tkinterで作られたシンプルな漢字練習アプリです。アプリには解答入力機能はなく、問題の出題と答え合わせが主な目的です。問題集に新たな問題を加えたり、問題の内容を変えたりすることも可能です。
 
-Kinben is a simple kanji practice app made with Python/Tkinter. Since there is no built-in notepad, the app is meant to be used as a random question generator that you can use with pencil and paper to wrte down your answers. You can change add to/change the data in the attached kanji database from the app as well.
+Kinben is a simple kanji practice app made with Python/Tkinter. Since there is no built-in entry pad, the app is mainly for random question generation and answer checking. You can add to/change the data in the attached kanji database from the app as well.
 
 ## インストールの仕方 (How to Install)
 1. コンピューターの端末を開き、`git clone git@github.com:tamitakada/kinben.git`を入力  
@@ -28,5 +28,5 @@ Kinben is a simple kanji practice app made with Python/Tkinter. Since there is n
 5. 左上の白いボタンを押し、漢字検索場面に戻る。
 
 ## 使用したソフトウェア等
-* アプリで使用されている背景は、すべて[Haikei](https://haikei.app/)を使って作成されています。
-* アプリでは、大平義道様の[ZEN丸ゴシック体](https://fonts.google.com/specimen/Zen+Maru+Gothic?query=zen+)と井上デザインの[id-壊雲体](http://idfont.jp/infos_mb.html)を使わせていただきました。
+* アプリで使用している背景は[Haikei](https://haikei.app/)で作成しています。
+* 大平義道様の[ZEN丸ゴシック体](https://fonts.google.com/specimen/Zen+Maru+Gothic?query=zen+)と井上デザインの[id-壊雲体](http://idfont.jp/infos_mb.html)を使わせていただきました。
